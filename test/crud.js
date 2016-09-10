@@ -3,7 +3,7 @@ import nock from 'nock';
 import fetch from 'node-fetch';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import Apist from '../src';
+import Apist, { bindActionCreators } from '../src';
 
 global.fetch = fetch;
 const mockStore = configureMockStore([thunk]);
@@ -110,4 +110,40 @@ test('combine requests', async t => {
     user.actions.fetchAllRequest(),
     user.actions.fetchAllSuccess([{ name: 'John' }]),
   ]);
+});
+
+test('bindActionCreators', async t => {
+  const user = new TestApist('users');
+  const store = mockStore();
+
+  scope.get('/users').reply(200, [{ name: 'John' }]);
+  scope.get('/users/20').reply(200, { name: 'John' });
+  scope.post('/users').reply(201, (_, body) => body);
+  scope.put('/users/20').reply(200, (_, body) => body);
+  scope.delete('/users/20').reply(204);
+
+  const actions = bindActionCreators(user, store.dispatch);
+
+  await actions.fetchAll();
+  await actions.fetch(20);
+  await actions.create({ name: 'John' });
+  await actions.update(20, { name: 'John' });
+  await actions.delete(20);
+
+  t.deepEqual(store.getActions(), [
+    user.actions.fetchAllRequest(),
+    user.actions.fetchAllSuccess([{ name: 'John' }]),
+    user.actions.fetchRequest(),
+    user.actions.fetchSuccess({ name: 'John' }),
+    user.actions.createRequest(),
+    user.actions.createSuccess({ name: 'John' }),
+    user.actions.updateRequest(),
+    user.actions.updateSuccess({ name: 'John' }),
+    user.actions.deleteRequest(),
+    user.actions.deleteSuccess(20),
+  ]);
+});
+
+test('bindActionCreators wrong argument', t => {
+  t.throws(() => bindActionCreators(123), 'Expected an instance of ReduxApist.');
 });
