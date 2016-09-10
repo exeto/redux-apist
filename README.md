@@ -14,7 +14,7 @@ $ npm install --save redux-apist
 ```js
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import Apist from 'redux-apist';
+import Apist, { bindActionCreators } from 'redux-apist';
 import reducer from './reducers';
 
 const store = createStore(reducer, applyMiddleware(thunk));
@@ -22,6 +22,12 @@ const user = new Apist('users');
 
 store.dispatch(user.fetch(10))
 //=> GET /users/10
+
+// Bind actions
+const actions = bindActionCreators(user, store.dispatch);
+
+actions.fetchAll();
+//=> GET /users
 ```
 
 Within the used [`fetch`](https://fetch.spec.whatwg.org/). You can add polyfill to your project.
@@ -178,6 +184,10 @@ The creators of the [FSA](https://github.com/acdlite/flux-standard-action).
   deleteFailure: 'RESOURCE_DELETE_FAILURE',
 }
 ```
+
+### bindActionCreators(apistInstance, dispatch)
+
+Turns an object whose values are action creators, but with every action creator wrapped into a dispatch call so they may be invoked directly.
 
 ## Related
 
