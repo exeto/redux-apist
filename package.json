@@ -1,6 +1,6 @@
 {
   "name": "redux-apist",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Creator API actions for redux-thunk",
   "main": "lib/index.js",
   "repository": "exeto/redux-apist",
