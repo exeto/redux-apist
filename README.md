@@ -11,6 +11,8 @@ $ npm install --save redux-apist
 
 ## Usage
 
+[Example usage](https://github.com/exeto/react-redux-starter)
+
 ```js
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
