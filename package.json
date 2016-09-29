@@ -45,7 +45,7 @@
     "coveralls": "^2.11.12",
     "eslint": "^3.6.1",
     "eslint-config-exeto-base": "^1.0.0",
-    "eslint-plugin-import": "^1.13.0",
+    "eslint-plugin-import": "^2.0.0",
     "nock": "^8.0.0",
     "node-fetch": "^1.6.0",
     "nyc": "^8.3.0",
