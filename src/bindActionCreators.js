@@ -6,7 +6,7 @@ export default function bindActionCreators(apistInstance, dispatch) {
   }
 
   const actions = {};
-  ['fetchAll', 'fetch', 'create', 'update', 'delete'].forEach(operation => {
+  ['fetchAll', 'fetch', 'create', 'update', 'delete'].forEach((operation) => {
     actions[operation] = (...args) =>
       dispatch(apistInstance[operation].call(apistInstance, ...args));
   });

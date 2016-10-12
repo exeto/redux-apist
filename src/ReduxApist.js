@@ -1,3 +1,5 @@
+/* eslint class-methods-use-this: off */
+
 import avali from 'avali';
 import queryStringify from 'qs/lib/stringify';
 import createAction from 'redux-actions/lib/createAction';
@@ -43,13 +45,13 @@ export default class ReduxApist {
 
       const request = fetch(url, options)
         .then(res => this.deserialize(options, res))
-        .then(result => {
+        .then((result) => {
           delete cache[url];
           result = method === 'DELETE' ? id : result;
           dispatch(this.actions[`${type}Success`](result));
           return result;
         })
-        .catch(err => {
+        .catch((err) => {
           delete cache[url];
           throw err;
         })

@@ -1,7 +1,7 @@
 export default function (...args) {
   const url = args
     .filter(item => item)
-    .map(item => {
+    .map((item) => {
       item = String(item);
       return item.replace(/(^\/+|\/+$)/g, '');
     })
