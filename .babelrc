@@ -1,4 +1,11 @@
 {
   "plugins": ["transform-object-assign"],
-  "presets": ["es2015"]
+  "env": {
+    "commonjs": {
+      "presets": ["es2015"]
+    },
+    "umd": {
+      "presets": [["es2015", { "modules": false }]]
+    }
+  }
 }
