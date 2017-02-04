@@ -8,11 +8,11 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint src",
-    "test": "npm run lint && nyc ava",
+    "test": "npm run lint && BABEL_ENV=commonjs nyc ava",
     "clean": "rm -rf lib dist",
-    "build:commonjs": "babel src --out-dir lib",
-    "build:umd": "NODE_ENV=development webpack src/index.js dist/redux-apist.js",
-    "build:umd:min": "NODE_ENV=production webpack src/index.js dist/redux-apist.min.js",
+    "build:commonjs": "BABEL_ENV=commonjs babel src --out-dir lib",
+    "build:umd": "BABEL_ENV=umd webpack src/index.js dist/redux-apist.js",
+    "build:umd:min": "BABEL_ENV=umd webpack -p src/index.js dist/redux-apist.min.js",
     "build": "npm run build:commonjs && npm run build:umd && npm run build:umd:min",
     "prepublish": "npm run clean && npm run test && npm run build"
   },
@@ -51,7 +51,7 @@
     "redux": "^3.5.2",
     "redux-mock-store": "^1.1.4",
     "redux-thunk": "^2.1.0",
-    "webpack": "^1.13.1"
+    "webpack": "^2.2.1"
   },
   "ava": {
     "require": ["babel-register"]
