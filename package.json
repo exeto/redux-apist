@@ -33,7 +33,7 @@
   "dependencies": {
     "avali": "^0.1.0",
     "qs": "^6.2.1",
-    "redux-actions": "^1.0.0"
+    "redux-actions": "^2.0.1"
   },
   "devDependencies": {
     "ava": "^0.18.0",
@@ -54,6 +54,8 @@
     "webpack": "^2.2.1"
   },
   "ava": {
-    "require": ["babel-register"]
+    "require": [
+      "babel-register"
+    ]
   }
 }
