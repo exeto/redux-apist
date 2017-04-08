@@ -9,7 +9,7 @@ import constantCase from './utils/constantCase';
 
 export default class ReduxApist {
   constructor(resource) {
-    avali(['str'], arguments);
+    avali('str', resource);
 
     this.cache = {};
     this.resource = resource;
@@ -86,12 +86,12 @@ export default class ReduxApist {
   }
 
   fetchAll(query) {
-    avali(['obj, nil'], arguments);
+    avali(['obj, undef'], query);
     return this.callApi('GET', { query, type: 'fetchAll' });
   }
 
   fetch(id, query) {
-    avali(['num, str', 'obj, nil'], arguments);
+    avali(['num, str', 'obj, undef'], arguments);
     return this.callApi('GET', { id, query, type: 'fetch' });
   }
 
@@ -100,12 +100,12 @@ export default class ReduxApist {
   }
 
   update(id, data) {
-    avali(['num, str'], arguments);
+    avali(['num, str'], id);
     return this.callApi('PUT', { id, data, type: 'update' });
   }
 
   delete(id) {
-    avali(['num, str'], arguments);
+    avali(['num, str'], id);
     return this.callApi('DELETE', { id, type: 'delete' });
   }
 
