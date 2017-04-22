@@ -1,4 +1,6 @@
 # redux-apist
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/exeto/redux-apist.svg)](https://greenkeeper.io/)
 [![Build Status][buildstat-image]][buildstat-url] [![Coverage Status][coverage-image]][coverage-url] [![Dependency Status][depstat-image]][depstat-url]
 
 > Creator API actions for [redux-thunk](https://github.com/gaearon/redux-thunk)
