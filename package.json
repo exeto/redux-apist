@@ -36,7 +36,7 @@
     "redux-actions": "^2.0.1"
   },
   "devDependencies": {
-    "ava": "^0.24.0",
+    "ava": "^0.25.0",
     "babel-cli": "^6.11.4",
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-object-assign": "^6.8.0",
