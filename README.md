@@ -1,4 +1,5 @@
 # redux-apist
+
 [![Build Status][buildstat-image]][buildstat-url] [![Coverage Status][coverage-image]][coverage-url] [![Dependency Status][depstat-image]][depstat-url]
 
 > Creator API actions for [redux-thunk](https://github.com/gaearon/redux-thunk)
@@ -11,8 +12,6 @@ $ npm install --save redux-apist
 
 ## Usage
 
-[Example usage](https://github.com/exeto/react-redux-starter)
-
 ```js
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
@@ -22,7 +21,7 @@ import reducer from './reducers';
 const store = createStore(reducer, applyMiddleware(thunk));
 const user = new Apist('users');
 
-store.dispatch(user.fetch(10))
+store.dispatch(user.fetch(10));
 //=> GET /users/10
 
 // Bind actions
@@ -81,9 +80,9 @@ All CRUD methods return redux-thunk action.
 
 > GET `/resource?query`
 
-- `RESOURCE_FETCH_ALL_REQUEST`
-- `RESOURCE_FETCH_ALL_SUCCESS`
-- `RESOURCE_FETCH_ALL_FAILURE`
+* `RESOURCE_FETCH_ALL_REQUEST`
+* `RESOURCE_FETCH_ALL_SUCCESS`
+* `RESOURCE_FETCH_ALL_FAILURE`
 
 ##### query
 
@@ -93,9 +92,9 @@ Type: `object`
 
 > GET `/resource/:id?query`
 
-- `RESOURCE_FETCH_REQUEST`
-- `RESOURCE_FETCH_SUCCESS`
-- `RESOURCE_FETCH_FAILURE`
+* `RESOURCE_FETCH_REQUEST`
+* `RESOURCE_FETCH_SUCCESS`
+* `RESOURCE_FETCH_FAILURE`
 
 ##### id
 
@@ -109,9 +108,9 @@ Type: `object`
 
 > POST `/resource`
 
-- `RESOURCE_CREATE_REQUEST`
-- `RESOURCE_CREATE_SUCCESS`
-- `RESOURCE_CREATE_FAILURE`
+* `RESOURCE_CREATE_REQUEST`
+* `RESOURCE_CREATE_SUCCESS`
+* `RESOURCE_CREATE_FAILURE`
 
 ##### data
 
@@ -121,9 +120,9 @@ Type: `any`
 
 > PUT `/resource/:id`
 
-- `RESOURCE_UPDATE_REQUEST`
-- `RESOURCE_UPDATE_SUCCESS`
-- `RESOURCE_UPDATE_FAILURE`
+* `RESOURCE_UPDATE_REQUEST`
+* `RESOURCE_UPDATE_SUCCESS`
+* `RESOURCE_UPDATE_FAILURE`
 
 ##### id
 
@@ -137,9 +136,9 @@ Type: `any`
 
 > DELETE `/resource/:id`
 
-- `RESOURCE_DELETE_REQUEST`
-- `RESOURCE_DELETE_SUCCESS`
-- `RESOURCE_DELETE_FAILURE`
+* `RESOURCE_DELETE_REQUEST`
+* `RESOURCE_DELETE_SUCCESS`
+* `RESOURCE_DELETE_FAILURE`
 
 ##### id
 
@@ -149,21 +148,21 @@ Type: `any`
 
 The creators of the [FSA](https://github.com/acdlite/flux-standard-action).
 
-- `fetchAllRequest`
-- `fetchAllSuccess`
-- `fetchAllFailure`
-- `fetchRequest`
-- `fetchSuccess`
-- `fetchFailure`
-- `createRequest`
-- `createSuccess`
-- `createFailure`
-- `updateRequest`
-- `updateSuccess`
-- `updateFailure`
-- `deleteRequest`
-- `deleteSuccess`
-- `deleteFailure`
+* `fetchAllRequest`
+* `fetchAllSuccess`
+* `fetchAllFailure`
+* `fetchRequest`
+* `fetchSuccess`
+* `fetchFailure`
+* `createRequest`
+* `createSuccess`
+* `createFailure`
+* `updateRequest`
+* `updateSuccess`
+* `updateFailure`
+* `deleteRequest`
+* `deleteSuccess`
+* `deleteFailure`
 
 #### .types
 
@@ -193,7 +192,7 @@ Turns an object whose values are action creators, but with every action creator 
 
 ## Related
 
-- [apist](https://github.com/exeto/apist) - Simple REST API client
+* [apist](https://github.com/exeto/apist) - Simple REST API client
 
 ## License
 
