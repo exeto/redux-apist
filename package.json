@@ -37,7 +37,7 @@
     "babel-plugin-transform-object-assign": "^6.8.0",
     "babel-preset-env": "^1.6.1",
     "coveralls": "^3.0.0",
-    "eslint": "^4.17.0",
+    "eslint": "^5.0.0",
     "eslint-config-exeto-base": "^3.0.0",
     "eslint-plugin-import": "^2.0.0",
     "nock": "^9.0.0",
