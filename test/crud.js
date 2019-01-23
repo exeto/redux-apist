@@ -16,7 +16,7 @@ class TestApist extends Apist {
   }
 }
 
-test('fetch all', async t => {
+test('fetch all', async (t) => {
   const user = new TestApist('users');
   const store = mockStore();
   scope.get('/users').reply(200, [{ name: 'John' }]);
@@ -29,7 +29,7 @@ test('fetch all', async t => {
   ]);
 });
 
-test('fetch', async t => {
+test('fetch', async (t) => {
   const user = new TestApist('users');
   const store = mockStore();
   scope.get('/users/20').reply(200, { name: 'John' });
@@ -42,7 +42,7 @@ test('fetch', async t => {
   ]);
 });
 
-test('create', async t => {
+test('create', async (t) => {
   const user = new TestApist('users');
   const store = mockStore();
   scope.post('/users').reply(201, (_, body) => body);
@@ -55,7 +55,7 @@ test('create', async t => {
   ]);
 });
 
-test('update', async t => {
+test('update', async (t) => {
   const user = new TestApist('users');
   const store = mockStore();
   scope.put('/users/20').reply(200, (_, body) => body);
@@ -68,7 +68,7 @@ test('update', async t => {
   ]);
 });
 
-test('delete', async t => {
+test('delete', async (t) => {
   const user = new TestApist('users');
   const store = mockStore();
   scope.delete('/users/20').reply(204);
@@ -81,7 +81,7 @@ test('delete', async t => {
   ]);
 });
 
-test('error 404', async t => {
+test('error 404', async (t) => {
   const user = new TestApist('users');
   const store = mockStore();
   scope.get('/users/404').reply(404);
@@ -96,7 +96,7 @@ test('error 404', async t => {
   }
 });
 
-test('combine requests', async t => {
+test('combine requests', async (t) => {
   const user = new TestApist('users');
   const store = mockStore();
   scope.get('/users').reply(200, [{ name: 'John' }]);
@@ -112,7 +112,7 @@ test('combine requests', async t => {
   ]);
 });
 
-test('bindActionCreators', async t => {
+test('bindActionCreators', async (t) => {
   const user = new TestApist('users');
   const store = mockStore();
 
@@ -144,6 +144,6 @@ test('bindActionCreators', async t => {
   ]);
 });
 
-test('bindActionCreators wrong argument', t => {
+test('bindActionCreators wrong argument', (t) => {
   t.throws(() => bindActionCreators(123), 'Expected an instance of ReduxApist.');
 });
