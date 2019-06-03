@@ -37,7 +37,7 @@
     "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.2.3",
     "@babel/register": "^7.0.0",
-    "ava": "^1.1.0",
+    "ava": "^2.0.0",
     "coveralls": "^3.0.2",
     "eslint": "^5.0.0",
     "eslint-config-exeto-base": "^3.0.0",
