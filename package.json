@@ -39,7 +39,7 @@
     "@babel/register": "^7.0.0",
     "ava": "^2.0.0",
     "coveralls": "^3.0.2",
-    "eslint": "^5.0.0",
+    "eslint": "^6.0.1",
     "eslint-config-exeto-base": "^3.0.0",
     "eslint-plugin-import": "^2.0.0",
     "nock": "^10.0.0",
