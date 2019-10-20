@@ -3,7 +3,7 @@
   "version": "0.2.1",
   "description": "Creator API actions for redux-thunk",
   "main": "lib/index.js",
-  "repository": "exeto/redux-apist",
+  "repository": "exeto-archive/redux-apist",
   "author": "Timofey Dergachev <t@exeto.me> (https://exeto.me/)",
   "license": "MIT",
   "scripts": {
